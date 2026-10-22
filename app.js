@@ -524,7 +524,6 @@ function renderQuotes() {
   const meta = document.createElement("div");
   meta.className = "quote-card__meta";
   const source = addTextElement(meta, "span", "");
-  const tag = addTextElement(meta, "span", "");
   card.append(meta);
   const actions = document.createElement("div");
   actions.className = "quote-card__actions";
@@ -542,13 +541,13 @@ function renderQuotes() {
   controls.hidden = quotes.length < 2;
   const previousButton = document.createElement("button");
   previousButton.type = "button";
-  previousButton.setAttribute("aria-label", "Ver citação anterior");
+  previousButton.setAttribute("aria-label", "Ver frase anterior");
   previousButton.textContent = "←";
   const count = addTextElement(controls, "span", "", "quote-carousel__count");
   count.setAttribute("aria-live", "polite");
   const nextButton = document.createElement("button");
   nextButton.type = "button";
-  nextButton.setAttribute("aria-label", "Ver próxima citação");
+  nextButton.setAttribute("aria-label", "Ver próxima frase");
   nextButton.textContent = "→";
   controls.prepend(previousButton);
   controls.append(nextButton);
@@ -556,11 +555,10 @@ function renderQuotes() {
 
   const renderActiveQuote = () => {
     const quote = quotes[activeQuote];
-    card.setAttribute("aria-label", `Citação ${activeQuote + 1} de ${quotes.length}`);
+    card.setAttribute("aria-label", `Frase ${activeQuote + 1} de ${quotes.length}`);
     quoteText.textContent = `“${quote.text}”`;
     source.textContent = quote.source || "";
     source.hidden = !quote.source;
-    tag.textContent = quote.tag || "Citação";
     card.querySelector("[data-copy-quote]").setAttribute("data-copy-quote", quote.text);
     card.querySelector("[data-share-quote]").setAttribute("data-share-quote", quote.text);
     count.textContent = `${activeQuote + 1} / ${quotes.length}`;
