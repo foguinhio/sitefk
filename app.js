@@ -501,8 +501,13 @@ function renderQuotes() {
   const root = document.querySelector("[data-quotes]");
   if (!root) return;
 
+  const seenQuoteTexts = new Set();
   const quotes = Array.isArray(SITE_CONTENT.quotes)
-    ? SITE_CONTENT.quotes.filter((quote) => quote && typeof quote.text === "string" && quote.text)
+    ? SITE_CONTENT.quotes.filter((quote) => {
+      if (!quote || typeof quote.text !== "string" || !quote.text || seenQuoteTexts.has(quote.text)) return false;
+      seenQuoteTexts.add(quote.text);
+      return true;
+    })
     : [];
   if (quotes.length === 0) {
     root.innerHTML = `
@@ -515,7 +520,16 @@ function renderQuotes() {
     return;
   }
 
-  let activeQuote = 0;
+  const shuffleQuoteIndices = () => {
+    const indices = quotes.map((_, index) => index);
+    for (let index = indices.length - 1; index > 0; index -= 1) {
+      const swapIndex = Math.floor(Math.random() * (index + 1));
+      [indices[index], indices[swapIndex]] = [indices[swapIndex], indices[index]];
+    }
+    return indices;
+  };
+  let randomQuoteBag = shuffleQuoteIndices();
+  let activeQuote = randomQuoteBag.shift();
   const card = document.createElement("article");
   card.className = "quote-card";
   card.setAttribute("aria-live", "polite");
@@ -527,7 +541,7 @@ function renderQuotes() {
   card.append(meta);
   const actions = document.createElement("div");
   actions.className = "quote-card__actions";
-  [["Copiar", "data-copy-quote"], ["Compartilhar", "data-share-quote"]].forEach(([label, attribute]) => {
+  [["Copiar", "data-copy-quote"], ["Compartilhar", "data-share-quote"], ["Sortear frase", "data-random-quote"]].forEach(([label, attribute]) => {
     const button = document.createElement("button");
     button.className = "quote-card__button";
     button.type = "button";
@@ -569,8 +583,20 @@ function renderQuotes() {
     renderActiveQuote();
   };
 
+  const drawRandomQuote = () => {
+    if (randomQuoteBag.length === 0) {
+      randomQuoteBag = shuffleQuoteIndices();
+      if (randomQuoteBag.length > 1 && randomQuoteBag[0] === activeQuote) {
+        [randomQuoteBag[0], randomQuoteBag[1]] = [randomQuoteBag[1], randomQuoteBag[0]];
+      }
+    }
+    activeQuote = randomQuoteBag.shift();
+    renderActiveQuote();
+  };
+
   previousButton.addEventListener("click", () => moveQuote(-1));
   nextButton.addEventListener("click", () => moveQuote(1));
+  card.querySelector("[data-random-quote]").addEventListener("click", drawRandomQuote);
   root.replaceChildren(card);
   renderActiveQuote();
 

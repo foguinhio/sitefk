@@ -120,6 +120,86 @@ window.SITE_CONTENT = {
     {
       text: "Que a gratidão seja a memória do nosso coração e Deus seja sempre a direção dos nossos passos.",
       source: "Padre Leandro Dutra"
+    },
+    {
+      text: "E o Verbo se fez carne e habitou entre nós, cheio de graça e de verdade, e vimos a sua glória, glória como do unigênito do Pai.",
+      source: "João 1,14"
+    },
+    {
+      text: "Tudo posso naquele que me fortalece.",
+      source: "Filipenses 4,13"
+    },
+    {
+      text: "O amor jamais passará. As profecias desaparecerão, as línguas cessarão e a ciência também desaparecerá.",
+      source: "1 Coríntios 13,8"
+    },
+    {
+      text: "A esperança não decepciona, porque o amor de Deus foi derramado em nossos corações pelo Espírito Santo que nos foi dado.",
+      source: "Romanos 5,5"
+    },
+    {
+      text: "E conhecereis a verdade, e a verdade vos libertará.",
+      source: "João 8,32"
+    },
+    {
+      text: "O Senhor é o meu pastor; nada me faltará.",
+      source: "Salmo 23,1"
+    },
+    {
+      text: "Perto está o Senhor dos que têm o coração quebrantado e salva os de espírito abatido.",
+      source: "Salmo 34,18"
+    },
+    {
+      text: "Tudo tem o seu tempo determinado, e há tempo para todo propósito debaixo do céu.",
+      source: "Eclesiastes 3,1"
+    },
+    {
+      text: "Não temas, porque eu sou contigo; não te assombres, porque eu sou o teu Deus. Eu te fortaleço, e te ajudo, e te sustento com a minha destra fiel.",
+      source: "Isaías 41,10"
+    },
+    {
+      text: "O amor é paciente, o amor é bondoso. Não inveja, não se vangloria, não se orgulha.",
+      source: "1 Coríntios 13,4"
+    },
+    {
+      text: "Não tenhais medo! Abri, melhor, escancarai as portas a Cristo!",
+      source: "São João Paulo II"
+    },
+    {
+      text: "Todos nascem como originais, mas muitos morrem como fotocópias.",
+      source: "São Carlo Acutis"
+    },
+    {
+      text: "Reza, espera e não te preocupes.",
+      source: "São Pio de Pietrelcina"
+    },
+    {
+      text: "O amor tudo vence.",
+      source: "São João da Cruz"
+    },
+    {
+      text: "Nada te perturbe, nada te espante. Tudo passa. Deus não muda.",
+      source: "Santa Teresa de Ávila"
+    },
+    {
+      text: "Comece fazendo o que é necessário, depois o que é possível e, de repente, você estará fazendo o impossível.",
+      source: "São Francisco de Assis"
+    },
+    {
+      text: "A medida do amor é amar sem medida.",
+      source: "Santo Agostinho"
+    },
+    {
+      text: "Porque para mim o viver é Cristo, e o morrer é ganho.",
+      source: "Filipenses 1,21"
+    },
+    {
+      text: "Deus não se cansa de perdoar, somos nós que nos cansamos de pedir a sua misericórdia.",
+      source: "Papa Francisco"
+    },
+    {
+      text: "Santifica o teu trabalho. Santifica-te no teu trabalho. Santifica os outros com o teu trabalho.",
+      source: "São Josemaria Escrivá"
     }
   ]
 };
